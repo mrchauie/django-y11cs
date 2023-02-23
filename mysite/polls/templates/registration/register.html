@@ -3,7 +3,6 @@
 {% load static %}
 
 {% block content %}
-
 	<form method="POST">
 		{% csrf_token %}
 		<h2>Create your account</h2>
@@ -21,6 +20,4 @@
 	</form>
 	<hr>
 	<p>Already have an account? <a href="{% url 'login'%}">Login Here</a></p>
-</div>
-
 {% endblock content %}
