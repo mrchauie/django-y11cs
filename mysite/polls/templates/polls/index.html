@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    {% if request.user.is_authenticated %}
+        <h1>Welcome {{ user.username }} </h1>
+        {% if latest_question_list %}
+            <ul>
+            {% for question in latest_question_list %}
+                <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>    
+            {% endfor %}
+            </ul>
+        {% else %}
+        <div class="container">
+            <p>No polls are available.</p>
+        </div>
+        {% endif %}
+    {% else %}
+    <div class="container">
+        <p>Please log in.</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}

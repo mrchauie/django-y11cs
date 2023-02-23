@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block content %}
+
+	<form method="POST">
+		{% csrf_token %}
+		<h2>Create your account</h2>
+		{% for field in form %}
+			<p>
+	    		{{ field.label_tag }} 
+	        	{{ field }}
+	        	{% if field.errors %}
+	        		<small class="error">{{ field.errors|striptags  }}</small> 
+	        	{% endif %}
+			</p>
+		{% endfor %}
+		
+		<input type="submit" value="Register">
+	</form>
+	<hr>
+	<p>Already have an account? <a href="{% url 'login'%}">Login Here</a></p>
+</div>
+
+{% endblock content %}
