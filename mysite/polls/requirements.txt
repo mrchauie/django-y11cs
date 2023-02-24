@@ -1,2 +1,2 @@
 django==4.1
-django-tailwind==3.4.0
+django-allauth >=0.52.0

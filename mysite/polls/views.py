@@ -28,7 +28,6 @@ class LoginView():
 class LogoutView():
     template_name = 'polls/index.html'
 
-
 # def vote(request, question_id):
 #     question = get_object_or_404(Question, pk=question_id)
 #     try:
