@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-
+{% load socialaccount %}
 
 {% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
@@ -33,6 +33,11 @@
     <input type="submit" value="login">
     <input type="hidden" name="next" value="{{ next }}">
 </form>
+
+
+<button class="btn btn-outline-info">
+    <a href="{% provider_login_url 'google'%}"><i class="fab fa-google"></i>Login with Google</a>
+</button>
 
 {# Assumes you set up the password_reset view in your URLconf #}
 <p><a href="{% url 'password_reset' %}">Lost password?</a></p>

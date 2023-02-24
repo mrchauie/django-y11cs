@@ -17,7 +17,6 @@ urlpatterns = [
     # path('<int:question_id>/vote/', views.vote, name='vote'),
     path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
     path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
-    # path("register", views.register_request, name="register"),
+    # # path("register", views.register_request, name="register"),
     path("register", views.RegisterUserFormView.as_view(), name="register"),
-
     ]
